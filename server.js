@@ -2,6 +2,7 @@ const express = require('express');
 const userRoutes = require('./src/routes/userRoutes')
 const loginRoutes = require('./src/routes/loginRoutes')
 const registerUserRoute = require('./src/routes/registerUserRoute')
+const postRoutes = require('./src/routes/postRoutes')
 require('dotenv').config();
 
 const app = express();
@@ -9,6 +10,7 @@ app.use(express.json());
 app.use('/users', userRoutes);
 app.use('/login', loginRoutes)
 app.use('/register',registerUserRoute)
+app.use('/posts',postRoutes)
 
 app.use((req, res, next) => {
     console.log('Middleware executed')
